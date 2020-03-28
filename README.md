@@ -16,7 +16,8 @@ To start application:
 
 * Database creation
 
-  `rake db:create`
+  Ensure you have your `config/database.yml` file correctly,
+  then run `rake db:create`
 
 * Database initialization:
 
@@ -30,3 +31,6 @@ To start application:
   `rspec`
 
   `rubocop` to check code offenses
+
+  Author:
+  [@zenbakiak](https://github.com/zenbakiak)
