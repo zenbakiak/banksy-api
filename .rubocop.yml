@@ -1,0 +1,12 @@
+require: rubocop-rails
+Documentation:
+  Enabled: false
+Layout/LineLength:
+  Max: 80
+  IgnoredPatterns: ['(\A|\s)#']
+Metrics/MethodLength:
+  Enabled: false
+Metrics/BlockLength:
+  Enabled: false
+Rails/InverseOf:
+  Enabled: false
