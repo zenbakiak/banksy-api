@@ -32,5 +32,15 @@ To start application:
 
   `rubocop` to check code offenses
 
+* To deploy on heroku:
+
+  - `heroku create`
+
+  - `Add the JWT_SECRET_KEY into your heroku env vars`
+
+  - `git push heroku master`
+
+  - `heroku run rake db:migrate`
+
   Author:
   [@zenbakiak](https://github.com/zenbakiak)
