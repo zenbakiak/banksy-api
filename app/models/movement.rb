@@ -21,7 +21,6 @@ class Movement < ApplicationRecord
              class_name: 'User',
              foreign_key: :receiver_id
 
-
   before_create :set_ref
 
   after_create :update_balances
@@ -34,9 +33,9 @@ class Movement < ApplicationRecord
               greater_than_or_equal_to: 100
             }
 
-  scope :for_user, -> (user) do
+  scope :for_user, lambda { |user|
     where(sender_id: user.id).or(where(receiver_id: user.id))
-  end
+  }
 
   scope :recient_first, -> { order(created_at: :desc) }
 
@@ -45,7 +44,7 @@ class Movement < ApplicationRecord
 
   def sufficient_funds
     Rails.logger.info sender.balance
-    errors.add(:amount, "Insufficient funds") if amount > sender.balance
+    errors.add(:amount, 'Insufficient funds') if amount > sender.balance
   end
 
   def set_ref

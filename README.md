@@ -1,24 +1,32 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project is an assessment.
 
-Things you may want to cover:
+To start application:
 
-* Ruby version
+- Clone this repo
+- `bundle install`
 
-* System dependencies
+* Ruby version:
 
-* Configuration
+  ruby 2.6.5p114
+
+* System dependencies:
+  - Postgres.
 
 * Database creation
 
-* Database initialization
+  `rake db:create`
+
+* Database initialization:
+
+  `rake db:setup `*
+
+  > \* this will create the database an run migrations and seeds.
+
 
 * How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+  `rspec`
 
-* Deployment instructions
-
-* ...
+  `rubocop` to check code offenses

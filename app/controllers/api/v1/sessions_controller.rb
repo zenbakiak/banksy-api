@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Api
   module V1
     class SessionsController < BaseController
@@ -7,7 +9,7 @@ module Api
       def create
         @user = User.find_by(email: session_params[:email])
 
-        if @user && @user.authenticate(session_params[:password])
+        if @user&.authenticate(session_params[:password])
           render json: UserSessionSerializer.new(@user).serialized_json
         else
           render_unauthorized

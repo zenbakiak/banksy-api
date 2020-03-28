@@ -20,7 +20,7 @@ FactoryBot.define do
     email { FFaker::Internet.email }
     first_name { FFaker::Name.first_name }
     last_name { FFaker::Name.last_name }
-    balance { 50000 }
+    balance { 50_000 }
     password { 'changeme' }
     password_confirmation { 'changeme' }
   end
